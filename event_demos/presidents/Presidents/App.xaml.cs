@@ -7,6 +7,8 @@ using Windows.UI.Xaml.Navigation;
 using Windows.UI;
 using Windows.UI.ViewManagement;
 using Windows.System.Profile;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
 
 namespace Presidents
 {
@@ -40,7 +42,8 @@ namespace Presidents
             //        Source = new Uri("ms-appx:///TvSafeColors.xaml")
             //    });
             //}
-
+            MobileCenter.Start("3544a518-72a3-4e82-baf2-5132eb1c4898", typeof(Analytics));
+            Analytics.Enabled = true;
             ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
             if (titleBar != null)
             {
