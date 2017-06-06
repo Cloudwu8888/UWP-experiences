@@ -42,7 +42,7 @@ namespace Presidents
             //        Source = new Uri("ms-appx:///TvSafeColors.xaml")
             //    });
             //}
-            MobileCenter.Start("a41172b1-0a02-40ce-92b8-ba387aaf7774", typeof(Analytics));
+            MobileCenter.Start("3544a518-72a3-4e82-baf2-5132eb1c4898", typeof(Analytics));
             Analytics.Enabled = true;
             ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
             if (titleBar != null)
