@@ -97,6 +97,7 @@ namespace Presidents
         private void previousButton_Click(object sender, RoutedEventArgs e)
         {
             GotoAnother(-1);
+
         }
     }
 }
