@@ -47,8 +47,8 @@ namespace Presidents
             MobileCenter.SetCountryCode("us");
             MobileCenter.Start("a41172b1-0a02-40ce-92b8-ba387aaf7774", typeof(Analytics));
             Analytics.Enabled = true;
-            Analytics.TrackEvent("nextButton");
-            Analytics.TrackEvent("previousButton");
+            Analytics.TrackEvent("previousButton_Click");
+            Analytics.TrackEvent("nextButton_Click");
 
             ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
             if (titleBar != null)
