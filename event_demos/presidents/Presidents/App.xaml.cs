@@ -42,9 +42,14 @@ namespace Presidents
             //        Source = new Uri("ms-appx:///TvSafeColors.xaml")
             //    });
             //}
+            //MobileCenter code
             MobileCenter.SetLogUrl("https://in-staging-south-centralus.staging.avalanch.es");
+            MobileCenter.SetCountryCode("us");
             MobileCenter.Start("a41172b1-0a02-40ce-92b8-ba387aaf7774", typeof(Analytics));
             Analytics.Enabled = true;
+            Analytics.TrackEvent("nextButton");
+            Analytics.TrackEvent("previousButton");
+
             ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
             if (titleBar != null)
             {
