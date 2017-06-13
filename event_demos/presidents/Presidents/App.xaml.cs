@@ -9,6 +9,8 @@ using Windows.UI.ViewManagement;
 using Windows.System.Profile;
 using Microsoft.Azure.Mobile;
 using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
+using Microsoft.Azure.Mobile.Push;
 
 namespace Presidents
 {
@@ -45,10 +47,11 @@ namespace Presidents
             //MobileCenter code
             MobileCenter.SetLogUrl("https://in-staging-south-centralus.staging.avalanch.es");
             MobileCenter.SetCountryCode("us");
-            MobileCenter.Start("a41172b1-0a02-40ce-92b8-ba387aaf7774", typeof(Analytics));
+            MobileCenter.Start("a41172b1-0a02-40ce-92b8-ba387aaf7774", typeof(Analytics), typeof(Crashes), typeof(Push));
             Analytics.Enabled = true;
             Analytics.TrackEvent("previousButton_Click");
             Analytics.TrackEvent("nextButton_Click");
+            
 
             ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
             if (titleBar != null)
