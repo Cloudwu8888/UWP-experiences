@@ -32,6 +32,29 @@ namespace Presidents
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            // This should come before MobileCenter.Start() is called
+            Push.PushNotificationReceived += (sender, es) => {
+
+                // Add the notification message and title to the message
+                var summary = $"Push notification received:"+
+                                    $"\n\tNotification title: {es.Title}" + 
+                  $"\n\tMessage: {es.Message}";
+
+                // If there is custom data associated with the notification,
+                // print the entries
+                if (es.CustomData != null)
+                {
+                    summary += "\n\tCustom data:\n";
+                    foreach (var key in es.CustomData.Keys)
+                    {
+                        summary += $"\t\t{key} : {es.CustomData[key]}\n";
+                    }
+                }
+
+                // Send the notification summary to debug output
+                System.Diagnostics.Debug.WriteLine(summary);
+            };
+            MobileCenter.LogLevel = LogLevel.Verbose;
             // TODO: 1.2 - Ensure we use ALL of the window space.  That means we have to make sure we follow the safe area of the screen!
             // ApplicationView.GetForCurrentView().SetDesiredBoundsMode(ApplicationViewBoundsMode.UseCoreWindow);
 
@@ -45,9 +68,11 @@ namespace Presidents
             //    });
             //}
             //MobileCenter code
-            MobileCenter.SetLogUrl("https://in-staging-south-centralus.staging.avalanch.es");
+            //MobileCenter.SetLogUrl("https://in-staging-south-centralus.staging.avalanch.es");
             MobileCenter.SetCountryCode("us");
             MobileCenter.Start("a41172b1-0a02-40ce-92b8-ba387aaf7774", typeof(Analytics), typeof(Crashes), typeof(Push));
+            var installid = MobileCenter.InstallId;
+            Push.CheckLaunchedFromNotification(e);
             Analytics.Enabled = true;
             Analytics.TrackEvent("previousButton_Click");
             Analytics.TrackEvent("nextButton_Click");
