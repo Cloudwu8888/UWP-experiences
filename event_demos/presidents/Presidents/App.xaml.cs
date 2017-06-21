@@ -72,6 +72,7 @@ namespace Presidents
             MobileCenter.SetCountryCode("us");
             MobileCenter.Start("a41172b1-0a02-40ce-92b8-ba387aaf7774", typeof(Analytics), typeof(Crashes), typeof(Push));
             var installid = MobileCenter.InstallId;
+            Push.Enabled=true;
             Push.CheckLaunchedFromNotification(e);
             Analytics.Enabled = true;
             Analytics.TrackEvent("previousButton_Click");

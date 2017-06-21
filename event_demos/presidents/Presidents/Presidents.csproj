@@ -182,6 +182,7 @@
     <Content Include="Assets\WashingtonCropped.JPG" />
     <Content Include="Assets\William_Howard_Taft_1909.jpg" />
     <Content Include="Assets\Zachary_Taylor.png" />
+    <None Include="Package.StoreAssociation.xml" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
