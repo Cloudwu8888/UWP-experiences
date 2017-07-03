@@ -70,7 +70,7 @@ namespace Presidents
             //MobileCenter code
             //MobileCenter.SetLogUrl("https://in-staging-south-centralus.staging.avalanch.es");
             MobileCenter.SetCountryCode("us");
-            MobileCenter.Start("a41172b1-0a02-40ce-92b8-ba387aaf7774", typeof(Analytics), typeof(Crashes), typeof(Push));
+            MobileCenter.Start("c12dc906-2ae8-4932-8eab-a24e29cea2b5", typeof(Analytics), typeof(Crashes), typeof(Push));
             var installid = MobileCenter.InstallId;
             Push.Enabled=true;
             Push.CheckLaunchedFromNotification(e);
