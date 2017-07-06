@@ -1,3 +1,4 @@
+![Build status](https://build.mobile.azure.com/v0.1/apps/46caed71-87c9-40b9-b887-75c3aa9bae1f/branches/Cloud_Push/badge)
 # UWP Experiences - app samples
 
 The UWP App Experiences are beautiful, cross device, feature rich and functional app samples built to demonstrate realistic app scenarios on the UWP platform across desktop, Xbox, mobile, and more. Besides being open source on GitHub, each sample is published to the Windows Store for easier access for developers and each is accompanied with at least one blog post and short overview video. 
